@@ -1,40 +1,48 @@
 //variables from html
 
-// const buttonTexts = document.getElementsByClassName("button");
-const numberTexts = document.querySelectorAll("number")[0];
-const operatorTexts = document.querySelectorAll("operator")[0];
-const decimalPoint = document.querySelectorAll("decimal-point")[0];
-const deleteOne = document.querySelectorAll("backspace")[0];
-const deleteOne = document.querySelectorAll("equals")[0];
-const equalsSign = document.getElementsByClassName("input-box")[0];
-console.log (`display box result has ${resultsScreen}`)
-
-
 // Get all the number button values into array
-const numberTexts = document.getElementsById("number")
-
-// Get all the operator button values into array
-const operatorText = document.getElementsById("operator")
-
-// Get the C button value - single value returned
+const numberTexts = document.querySelectorAll(".number");
+const resultsScreen = document.querySelectorAll(".input-box")[0];
+const operatorTexts = document.querySelectorAll(".operator");
 const clear = document.getElementById("clear")
+const equalsSign = document.querySelector("#equals");
+const deleteOne = document.querySelectorAll("backspace")[0];
 
-// Get the = button value - single value returned
-const equals = document.getElementById("equals")
-
-// Get the . button value
-const decimal = document.getElementById("decimal-point")
-// Get the <-- button value
-const deleteOne = document.getElementByTagName("backspace")
-
-// Get the input field answer value
-const inputArea = document.getElementById("input-field")
 //declaring empty variables
-let firstNumber = "";
-let secondNumber = "";
-let operator = "";
-let equation = "";
-let answer = "";
+let firstNumber;
+let secondNumber;
+let operator;
+let equation;
+let answer;
+
+// add clicked numbers to input section of the calculator and enable operators
+numberTexts.forEach((num) => {
+    num.addEventListener ("click", (event) => {
+        resultsScreen.innerHTML += num.innerHTML;
+        console.log(resultsScreen);
+    });
+})
+
+operatorTexts.forEach((operatorButton) => {
+    operatorButton.addEventListener ("click", (event) => {
+      //if I want to display operator on results screen
+        firstNumber = resultsScreen.innerHTML;
+        resultsScreen.innerHTML = firstNumber + operatorButton.innerHTML;
+        operator=operatorButton.innerHTML;
+        resultsScreen.innerHTML="";
+        console.log(firstNumber);
+        console.log(resultsScreen); 
+        console.log("Operator:" + operator);
+        console.log("Operator Button:" + operatorButton.innerHTML);
+
+    })
+});
+
+equalsSign.addEventListener ("click", (event) => {
+    secondNumber = resultsScreen.innerHTML;
+    console.log(secondNumber);
+});
+
 
 // Build out basic mathematic functions
 const addNumbers = (num1, num2) => (num1 + num2);
@@ -51,9 +59,15 @@ const calcPercentage = (num1, num2) => ((num1/num2*100));
 const calcSquareRoot = (num1) => Math.sqrt(num1);
 
 // Calculate using basic math functions defined above
-const calculate = (firstOperand, operator, secondOperand) => {
-  if (operator == "+") {
-    return addNumbers(firstOperand, secondOperand);
+const calculate = () => {
+  firstOperand = Number(firstNumber);
+  secondOperand = Number(secondNumber);
+  console.log("First Operand: "+firstOperand);
+  console.log("Second Operand: "+ secondOperand);
+  console.log("Operator: "+ operator);
+
+    if (operator == "+") {
+    resultsScreen.innerHTML=  firstOperand + secondOperand;
   } else if (operator == "-") {
     return subtractNumbers(firstOperand, secondOperand);
   } else if (operator == "*") {
@@ -67,14 +81,7 @@ const calculate = (firstOperand, operator, secondOperand) => {
   }
 }
 
-// const appendNumber = (arg1, arg2) => `$(arg1)$(arg2)`;
-
-// const createFirstOperand = (arg1, arg2) => {
-//   // keep appending number until input is done
-// }
-
-
-
-console.log(calculate(firstNumber,operator,secondNumber));
+equalsSign.addEventListener ("click", calculate);
+// console.log(calculate(firstNumber,operator,secondNumber));
 
 

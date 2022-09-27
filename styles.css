@@ -15,8 +15,9 @@ input::-webkit-inner-spin-button {
   text-shadow: lightblue;
 }
 
-.button:hover {
+.calculator-grid__item:hover {
   font-weight: bold;
+  background: #5fbd95;
 }
 
 main {
@@ -36,7 +37,9 @@ section {
 
 .input-box {
   border: 2px solid lightgray;
+  background-color: white;
   height: 50px;
+  width: 300px;
   text-align: right;
 }
 

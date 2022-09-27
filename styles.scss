@@ -31,8 +31,9 @@ $mint: #5BB48Dff;
   .calculator-grid__item:link, .calculator-grid__item:visited {
       text-shadow: lightblue;
   }
-  .button:hover {
+  .calculator-grid__item:hover {
       font-weight: bold;
+      background: $ocean-green;
   }
 
   main {
@@ -51,7 +52,9 @@ $mint: #5BB48Dff;
   }
   .input-box {
       border: 2px solid lightgray;
+      background-color: white;
       height: 50px;
+      width: 300px;
       // padding: 20px;
       text-align: right;
       // display: flex;
