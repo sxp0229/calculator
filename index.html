@@ -5,23 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="app.js"></script>
+  <script src="index.js"></script>
 </head>
 <body>
   <main>
-    <h1>I'm building a calculator!</h1>
+  <section>
+    <h1>Sheena's Calculator</h1>
+    <!-- <div class="prevEquationDisplay">0</div>
+    <div class="currentEquationDisplay">0</div> -->
+    <input class="input-box" id="input-field" type="number"></input>
     <div class="calculator-grid">
-      <div class="calculator-grid__item">1</div>
-      <div class="calculator-grid__item">2</div>
-      <div class="calculator-grid__item">3</div>
-      <div class="calculator-grid__item">4</div>
-      <div class="calculator-grid__item">5</div>
-      <div class="calculator-grid__item">6</div>
-      <div class="calculator-grid__item">7</div>
-      <div class="calculator-grid__item">8</div>
-      <div class="calculator-grid__item">9</div>
-      <div class="calculator-grid__item">0</div>
+      <button class="calculator-grid__item clear-red" id="clear">C</button>
+      <button class="calculator-grid__item operator-gold" id="operator">√</button>
+      <button class="calculator-grid__item operator-gold" id="operator">%</button>
+      <button class="calculator-grid__item operator-gold" id="operator">÷</button>
+      <button class="calculator-grid__item" id="number">7</button>
+      <button class="calculator-grid__item" id="number">8</button>
+      <button class="calculator-grid__item" id="number">9</button>
+      <button class="calculator-grid__item operator-gold" id="operator">x</button>
+      <button class="calculator-grid__item" id="number">4</button>
+      <button class="calculator-grid__item" id="number">5</button>
+      <button class="calculator-grid__item" id="number">6</button>
+      <button class="calculator-grid__item operator-gold" id="operator">-</button>
+      <button class="calculator-grid__item" id="number">1</button>
+      <button class="calculator-grid__item" id="number">2</button>
+      <button class="calculator-grid__item" id="number">3</button>
+      <button class="calculator-grid__item operator-gold" id="operator">+</button>
+      <button class="calculator-grid__item id="operator">+/-</button>
+      <button class="calculator-grid__item" id="number">0</button>
+      <button class="calculator-grid__item" id="decimal-point">.</button>
+      <button class="calculator-grid__item" id="'backspace">B</button>
+      <button class="calculator-grid__item span-four equals-green" id="equals">=</button>
     </div>
-  </main>
+  </section>
+</main>
 </body>
 </html>
