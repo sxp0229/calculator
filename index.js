@@ -68,17 +68,17 @@ const calculate = () => {
   console.log("Operator: "+ operator);
 
     if (operator == "+") {
-    resultsScreen.innerHTML=  firstOperand + secondOperand;
+    resultsScreen.innerHTML=  addNumbers (firstOperand, secondOperand);
   } else if (operator == "-") {
     resultsScreen.innerHTML = subtractNumbers(firstOperand, secondOperand);
   } else if (operator == "*") {
-    return multiplyNumbers(firstOperand, secondOperand);
+    resultsScreen.innerHTML =  multiplyNumbers(firstOperand, secondOperand);
   } else if (operator == "/") {
-    return divideNumbers (firstOperand, secondOperand);
+    resultsScreen.innerHTML =  divideNumbers (firstOperand, secondOperand);
   } else if (operator == "%") {
-    return calcPercentage (firstOperand, secondOperand);
+    resultsScreen.innerHTML =  calcPercentage (firstOperand, secondOperand);
   } else if (operator == "√") {
-    return calcSquareRoot (firstOperand);
+    resultsScreen.innerHTML =  calcSquareRoot (firstOperand);
   }
 }
 
