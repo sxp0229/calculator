@@ -2,7 +2,8 @@
 
 // Get all the number button values into array
 const numberTexts = document.querySelectorAll(".number");
-const resultsScreen = document.querySelectorAll(".input-box")[0];
+const resultsScreen = document.querySelectorAll(".input")[0];
+const equationScreen = document.querySelectorAll(".equation")[0];
 const operatorTexts = document.querySelectorAll(".operator");
 const clear = document.getElementById("clear")
 const equalsSign = document.querySelector("#equals");
@@ -10,16 +11,27 @@ const deleteOne = document.querySelectorAll("backspace")[0];
 
 //declaring empty variables
 let firstNumber;
+let firstClick=true;
+let operatorClicked=false;
 let secondNumber;
 let operator;
 let equation;
 let answer;
 
-// add clicked numbers to input section of the calculator and enable operators
+// add click ed numbers to input section of the calculator and enable operators
 numberTexts.forEach((num) => {
     num.addEventListener ("click", (event) => {
-        resultsScreen.innerHTML += num.innerHTML;
-        console.log(resultsScreen);
+      if (firstClick) {
+        resultsScreen.innerHTML= " ";
+        equationScreen.innerHTML = "";
+        firstClick=false;
+      } else if (operatorClicked) {
+        resultsScreen.innerHTML= " ";
+      }
+      resultsScreen.innerHTML += num.innerHTML;
+      equationScreen.innerHTML +=num.innerHTML;// firstNumber + operatorButton.innerHTML;
+      console.log(resultsScreen);        
+      
     });
 })
 
@@ -27,9 +39,10 @@ operatorTexts.forEach((operatorButton) => {
     operatorButton.addEventListener ("click", (event) => {
       //if I want to display operator on results screen
         firstNumber = resultsScreen.innerHTML;
-        resultsScreen.innerHTML = firstNumber + operatorButton.innerHTML;
-        operator=operatorButton.innerHTML;
-        resultsScreen.innerHTML="";
+        equationScreen.innerHTML = firstNumber + operatorButton.innerHTML;
+        operator = operatorButton.innerHTML;
+        operatorClicked = true;
+        // resultsScreen.innerHTML="";
         //for debugging
         console.log("First Number" + firstNumber);
         console.log("Results Screen" + resultsScreen); 
@@ -71,7 +84,7 @@ const calculate = () => {
     resultsScreen.innerHTML=  addNumbers (firstOperand, secondOperand);
   } else if (operator == "-") {
     resultsScreen.innerHTML = subtractNumbers(firstOperand, secondOperand);
-  } else if (operator == "*") {
+  } else if (operator == "x") {
     resultsScreen.innerHTML =  multiplyNumbers(firstOperand, secondOperand);
   } else if (operator == "/") {
     resultsScreen.innerHTML =  divideNumbers (firstOperand, secondOperand);
