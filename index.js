@@ -7,7 +7,7 @@ const equationScreen = document.querySelectorAll(".equation")[0];
 const operatorTexts = document.querySelectorAll(".operator");
 const clear = document.getElementById("clear")
 const equalsSign = document.querySelector("#equals");
-const deleteOne = document.querySelectorAll("backspace")[0];
+const deleteOne = document.getElementById("backspace");
 
 //declaring empty variables
 let firstNumber;
@@ -56,6 +56,11 @@ operatorTexts.forEach((operatorButton) => {
 equalsSign.addEventListener ("click", (event) => {
     secondNumber = resultsScreen.innerHTML;
     console.log("Second Number" + secondNumber);
+});
+
+deleteOne.addEventListener("click", (event) => {
+  resultsScreen.innerHTML = resultsScreen.innerHTML.slice(0,-1);
+  equationScreen.innerHTML = equationScreen.innerHTML.slice(0,-1);
 });
 
 clear.addEventListener ("click", (event) => {
