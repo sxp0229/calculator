@@ -23,7 +23,7 @@ let answer;
 numberTexts.forEach((num) => {
     num.addEventListener ("click", (event) => {
       if (firstClick) {
-        resultsScreen.innerHTML= " ";
+        resultsScreen.innerHTML= "";
         equationScreen.innerHTML = "";
         firstClick=false;
       } else if (operatorClicked) {
@@ -88,7 +88,7 @@ const divideNumbers = (num1, num2) => {
     return num1 / num2;
   }
 }
-const calcPercentage = (num1, num2) => ((num1/num2*100));
+const calcPercentage = (num1, num2) => ((num1/100*num2));
 const calcSquareRoot = (num1) => Math.sqrt(num1);
 
 // Calculate using basic math functions defined above
