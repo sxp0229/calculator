@@ -27,6 +27,7 @@ numberTexts.forEach((num) => {
         firstClick=false;
       } else if (operatorClicked) {
         resultsScreen.innerHTML= " ";
+        operatorClicked = false;
       }
       resultsScreen.innerHTML += num.innerHTML;
       equationScreen.innerHTML +=num.innerHTML;// firstNumber + operatorButton.innerHTML;
@@ -57,6 +58,14 @@ equalsSign.addEventListener ("click", (event) => {
     console.log("Second Number" + secondNumber);
 });
 
+clear.addEventListener ("click", (event) => {
+  firstNumber="";
+  secondNumber="";
+  operator="";
+  resultsScreen.innerHTML=0;
+  equationScreen.innerHTML=0;
+  firstClick=true;
+});
 
 // Build out basic mathematic functions
 const addNumbers = (num1, num2) => (num1 + num2);
@@ -86,7 +95,7 @@ const calculate = () => {
     resultsScreen.innerHTML = subtractNumbers(firstOperand, secondOperand);
   } else if (operator == "x") {
     resultsScreen.innerHTML =  multiplyNumbers(firstOperand, secondOperand);
-  } else if (operator == "/") {
+  } else if (operator == "÷") {
     resultsScreen.innerHTML =  divideNumbers (firstOperand, secondOperand);
   } else if (operator == "%") {
     resultsScreen.innerHTML =  calcPercentage (firstOperand, secondOperand);
