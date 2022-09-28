@@ -32,7 +32,6 @@ numberTexts.forEach((num) => {
       }
       resultsScreen.innerHTML += num.innerHTML;
       equationScreen.innerHTML +=num.innerHTML;
-      console.log(resultsScreen);        
       
     });
 })
@@ -44,19 +43,17 @@ operatorTexts.forEach((operatorButton) => {
         equationScreen.innerHTML = firstNumber + operatorButton.innerHTML;
         operator = operatorButton.innerHTML;
         operatorClicked = true;
-        // resultsScreen.innerHTML="";
         //for debugging
-        console.log("First Number" + firstNumber);
-        console.log("Results Screen" + resultsScreen); 
-        console.log("Operator:" + operator);
-        console.log("Operator Button:" + operatorButton.innerHTML);
+        // console.log("First Number" + firstNumber);
+        // console.log("Results Screen" + resultsScreen); 
+        // console.log("Operator:" + operator);
+        // console.log("Operator Button:" + operatorButton.innerHTML);
 
     })
 });
 
 equalsSign.addEventListener ("click", (event) => {
     secondNumber = resultsScreen.innerHTML;
-    console.log("Second Number" + secondNumber);
 });
 
 deleteOne.addEventListener("click", (event) => {
@@ -95,9 +92,10 @@ const calcSquareRoot = (num1) => Math.sqrt(num1);
 const calculate = () => {
   firstOperand = Number(firstNumber);
   secondOperand = Number(secondNumber);
-  console.log("First Operand: "+firstOperand);
-  console.log("Second Operand: "+ secondOperand);
-  console.log("Operator: "+ operator);
+  // for debugging
+  // console.log("First Operand: "+firstOperand);
+  // console.log("Second Operand: "+ secondOperand);
+  // console.log("Operator: "+ operator);
 
     if (operator == "+") {
     resultsScreen.innerHTML=  addNumbers (firstOperand, secondOperand);
@@ -115,5 +113,5 @@ const calculate = () => {
 }
 
 equalsSign.addEventListener ("click", calculate);
-answer = Number(resultsScreen.innerHTML);
-console.log(`Answer is $(answer)`);
+// answer = Number(resultsScreen.innerHTML);
+// console.log(`Answer is $(answer)`);
