@@ -6,6 +6,7 @@ $azure-x-11-web-color: #E4EFEDff; //background color
 $gainsboro: #E1E1E1ff; //button color
 $silver-sand: #C4CDCAff; //button border color
 $mint: #5BB48Dff;
+$heading-color-smallScreen: rgb(63, 160, 118);
 
 * { padding: 0;
   margin: 0;
@@ -91,4 +92,10 @@ $mint: #5BB48Dff;
 
   .clear-red {
       background-color: $bittersweet-shimmer;
+  }
+
+  @media screen and (max-width: 600px){
+    h1 {
+      color: $heading-color-smallScreen;
+    }
   }

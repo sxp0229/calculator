@@ -31,7 +31,7 @@ numberTexts.forEach((num) => {
         operatorClicked = false;
       }
       resultsScreen.innerHTML += num.innerHTML;
-      equationScreen.innerHTML +=num.innerHTML;// firstNumber + operatorButton.innerHTML;
+      equationScreen.innerHTML +=num.innerHTML;
       console.log(resultsScreen);        
       
     });
@@ -117,7 +117,3 @@ const calculate = () => {
 equalsSign.addEventListener ("click", calculate);
 answer = Number(resultsScreen.innerHTML);
 console.log(`Answer is $(answer)`);
-
-// console.log(calculate(firstNumber,operator,secondNumber));
-
-

@@ -80,4 +80,10 @@ section {
 
 .clear-red {
   background-color: #b55957;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    color: rgb(63, 160, 118);
+  }
 }/*# sourceMappingURL=styles.css.map */
