@@ -6,18 +6,17 @@
   font-size: 25px;
 }
 
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.calculator-grid__item:link, .calculator-grid__item:visited {
-  text-shadow: lightblue;
-}
-
 .calculator-grid__item:hover {
   font-weight: bold;
   background: #5fbd95;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
 }
 
 main {

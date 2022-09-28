@@ -30,8 +30,9 @@ operatorTexts.forEach((operatorButton) => {
         resultsScreen.innerHTML = firstNumber + operatorButton.innerHTML;
         operator=operatorButton.innerHTML;
         resultsScreen.innerHTML="";
-        console.log(firstNumber);
-        console.log(resultsScreen); 
+        //for debugging
+        console.log("First Number" + firstNumber);
+        console.log("Results Screen" + resultsScreen); 
         console.log("Operator:" + operator);
         console.log("Operator Button:" + operatorButton.innerHTML);
 
@@ -40,7 +41,7 @@ operatorTexts.forEach((operatorButton) => {
 
 equalsSign.addEventListener ("click", (event) => {
     secondNumber = resultsScreen.innerHTML;
-    console.log(secondNumber);
+    console.log("Second Number" + secondNumber);
 });
 
 
@@ -69,7 +70,7 @@ const calculate = () => {
     if (operator == "+") {
     resultsScreen.innerHTML=  firstOperand + secondOperand;
   } else if (operator == "-") {
-    return subtractNumbers(firstOperand, secondOperand);
+    resultsScreen.innerHTML = subtractNumbers(firstOperand, secondOperand);
   } else if (operator == "*") {
     return multiplyNumbers(firstOperand, secondOperand);
   } else if (operator == "/") {
@@ -82,6 +83,9 @@ const calculate = () => {
 }
 
 equalsSign.addEventListener ("click", calculate);
+answer = Number(resultsScreen.innerHTML);
+console.log(`Answer is $(answer)`);
+
 // console.log(calculate(firstNumber,operator,secondNumber));
 
 
