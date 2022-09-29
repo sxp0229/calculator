@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "This is a basic calculator that provides functionality for Addition, Subtraction, Multiplication, Division, Percentage and Square Root. It also allows you to make a number positive or beative",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxp0229/calculator.git"
+  },
+  "keywords": [],
+  "author": "Sheena Abraham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sxp0229/calculator/issues"
+  },
+  "homepage": "https://github.com/sxp0229/calculator#readme",
+  "devDependencies": {
+    "cypress": "^10.9.0"
+  }
+}

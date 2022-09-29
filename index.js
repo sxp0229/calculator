@@ -2,6 +2,7 @@
 
 // Get all the number button values into array
 const numberTexts = document.querySelectorAll(".number");
+console.log(numberTexts);
 const resultsScreen = document.querySelectorAll(".input")[0];
 const equationScreen = document.querySelectorAll(".equation")[0];
 const operatorTexts = document.querySelectorAll(".operator");
@@ -80,7 +81,7 @@ const subtractNumbers = (num1, num2) => (num1 - num2);
 const multiplyNumbers = (num1, num2) => (num1 * num2);
 const divideNumbers = (num1, num2) => {
   if (num2 === 0) {
-    return "ERROR! Cannot divide by 0!"
+    return "ERROR! Can't ÷ by 0!"
   } else {
     return num1 / num2;
   }
